@@ -6,4 +6,4 @@ The slides can be found here: [bit.ly/clust-blitz](https://bit.ly/clust-blitz) o
 
 The Clustergrammer website can be found [here](http://amp.pharm.mssm.edu/clustergrammer/) and the Clustergrammer repo can be found [here](https://github.com/MaayanLab/clustergrammer)
 
-Nicolas Fernandez at Icahn School of Medicine at Mount Sinai.
+Nicolas Fernandez: Icahn School of Medicine at Mount Sinai.

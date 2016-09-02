@@ -39,7 +39,7 @@ function make_clust(inst_network){
 function resize_container(args){
 
   var screen_width = window.innerWidth;
-  var screen_height = window.innerHeight - 20;
+  var screen_height = window.innerHeight - 25;
 
   d3.select(args.root)
     .style('width', screen_width+'px')

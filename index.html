@@ -13,7 +13,10 @@ section {
   font-weight: 900;
 }
 p {
-  line-height: 125%;
+  font-size: 125%;
+  line-height: 150%;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
 }
 
 #follow {
@@ -22,6 +25,8 @@ p {
 
 .grey {
   color: #777;
+  font-size: 125%;
+  line-height: 125%;
 }
 
 a:link,
@@ -34,33 +39,58 @@ a:hover {
   text-decoration: underline;
 }
 
+.section_title{
+  border-bottom-style:solid;
+  border-bottom-color: orange;
+  display: inline-block;
+  margin-bottom: 0em;
+}
+
+.main_section{
+  padding-top:2em;
+  padding-left:2em;
+}
+
+.main_title{
+  font-size: 145%;
+  line-height: 125%;
+}
+
 </style>
 
 <section style="text-align:center;padding-top:2em;">
-  <p style="font-size:150%;"><b><a href="http://amp.pharm.mssm.edu/clustergrammer/" target="_blank">Clustergrammer</a>:</b> Web-based Heatmap Visualization and Analysis Tool for <br> High-dimensional Biological Data
+  <p class='main_title'><b><a href="http://amp.pharm.mssm.edu/clustergrammer/" target="_blank">Clustergrammer</a>:</b> Web-based Heatmap Visualization and Analysis Tool for <br> High-dimensional Biological Data
   <p class="grey">Nicolas Fernandez<br>Ma'ayan Lab<br>Icahn School of Medicine at Mount Sinai<br>BD2K-LINCS Data Coordination and Integration Center<br>Data Blitz 2016<br></p>
-  <p>
+  <p style="margin-top:0em" >
   <a style='margin-top: 1em' href="http://bit.ly/clust-blitz">bit.ly/clust-blitz</a><br>
   </p>
 </section>
 
 
-<section style="padding-top:5em; padding-left:4em;">
-
+<section class='main_section'>
   <div style="display: inline-block; float:left">
-    <p>show clust</p><br>
-    <a href="http://bit.ly/clust-blitz">bit.ly/clust-blitz</a>
-  </div>
-
-  <div style="float:right; padding-right:3em;">
-    <p>clust
+    <p class='section_title'>
+      Biology is overflowing with data<br>
+      <p>
+        gene expression: ~20,000 genes<br>
+        proteomics: ~5000 proteins<br>
+        CyTOF: ~100,000 single-cells<br>
+        protein interact: >100 million
+        <br>
+        <br>
+        <br>
+        <br>
+        <div>
+        footer
+        </div>
+      </p>
+    </p>
   </div>
 
 
 </section>
 
-<section style="padding-top:5em; padding-left:4em;">
-
+<section class='main_section'>
   <div style="display: inline-block; float:left">
     <p>Two paragraphs side by side
       <br>with two lines of text
@@ -71,6 +101,18 @@ a:hover {
     <p>Example slide
   </div>
 </section>
+
+<!-- <section style="padding-top:5em; padding-left:4em;">
+  <div style="display: inline-block; float:left">
+    <p>show clust</p><br>
+    <a href="http://bit.ly/clust-blitz">bit.ly/clust-blitz</a>
+  </div>
+
+  <div style="float:right; padding-right:3em;">
+    <p>clust
+  </div>
+</section> -->
+
 
 <!-- <section style="padding-top:5em; padding-left:3em;">
   <p>In addition to the mouse,

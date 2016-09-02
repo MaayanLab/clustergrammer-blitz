@@ -24,7 +24,8 @@ p {
 }
 
 .grey {
-  color: #777;
+  /*color: #777;*/
+  color: #A3A3A3;
   font-size: 125%;
   line-height: 125%;
 }
@@ -44,11 +45,13 @@ a:hover {
   border-bottom-color: orange;
   display: inline-block;
   margin-bottom: 0em;
+  width: 100%;
 }
 
 .main_section{
   padding-top:2em;
   padding-left:2em;
+  padding-right:2em;
 }
 
 .main_title{
@@ -56,9 +59,35 @@ a:hover {
   line-height: 125%;
 }
 
+
+.wrap {
+  margin-top: 1em;
+  width: 100%;
+  overflow:auo;
+}
+
+.fleft {
+  float:left;
+  width: 55%;
+  /*background:blue;*/
+}
+
+.fright {
+  float: right;
+  width: 45%;
+  /*background:red;*/
+}
+
+.image_ref{
+  text-align: right;
+  color: #A3A3A3;
+  font-size: 75%;
+  /*display: inline-block;*/
+}
+
 </style>
 
-<section style="text-align:center;padding-top:2em;">
+<section style="text-align:center;padding-top:2.5em;">
   <p class='main_title'><b><a href="http://amp.pharm.mssm.edu/clustergrammer/" target="_blank">Clustergrammer</a>:</b> Web-based Heatmap Visualization and Analysis Tool for <br> High-dimensional Biological Data
   <p class="grey">Nicolas Fernandez<br>Ma'ayan Lab<br>Icahn School of Medicine at Mount Sinai<br>BD2K-LINCS Data Coordination and Integration Center<br>Data Blitz 2016<br></p>
   <p style="margin-top:0em" >
@@ -68,61 +97,70 @@ a:hover {
 
 
 <section class='main_section'>
-  <div style="display: inline-block; float:left">
-    <p class='section_title'>
-      Biology is overflowing with data<br>
-      <p>
-        gene expression: ~20,000 genes<br>
-        proteomics: ~5000 proteins<br>
-        CyTOF: ~100,000 single-cells<br>
-        protein interact: >100 million
-        <br>
-        <br>
-        <br>
-        <br>
-        <div>
-        footer
-        </div>
-      </p>
-    </p>
-  </div>
 
+    <p class='section_title'>
+      Biology is overflowing with data
+    </p>
+
+    <div class="wrap">
+      <div class="fleft">
+        <p>
+          gene expression: ~20,000 genes<br>
+          proteomics: ~5000 proteins<br>
+          CyTOF: ~100,000 single-cells<br>
+          protein interact: >100 million
+          <br>
+          <br>
+          <br>
+          <br>
+          <div>
+          <a style='margin-top: 1em' href="http://bit.ly/clust-blitz">bit.ly/clust-blitz</a>
+          </div>
+        </p>
+      </div>
+
+      <div class="fright">
+        <img src="sky.jpg" alt="Mountain View" style="width:100%; float:right">
+        <br>
+        <div class='image_ref'>
+          ref-for-sky
+        </div>
+      </div>
+    </div>
 
 </section>
 
 <section class='main_section'>
-  <div style="display: inline-block; float:left">
-    <p>Two paragraphs side by side
-      <br>with two lines of text
-    <p class="grey">and a second <br> paragraph
-  </div>
 
-  <div style="float:right; padding-right:3em;">
-    <p>Example slide
-  </div>
+    <p class='section_title'>
+      40/60 split
+    </p>
+
+    <div class="wrap">
+      <div class="fleft" style='width:40%'>
+        <p>
+          more examples of something ... and something
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <div>
+          <a style='margin-top: 1em' href="http://bit.ly/clust-blitz">bit.ly/clust-blitz</a>
+          </div>
+        </p>
+      </div>
+
+      <div class="fright" style='width:60%'>
+        <img src="sky.jpg" alt="Mountain View" style="width:100%; float:right">
+        <br>
+        <div class='image_ref'>
+          ref-for-sky
+        </div>
+      </div>
+    </div>
+
 </section>
-
-<!-- <section style="padding-top:5em; padding-left:4em;">
-  <div style="display: inline-block; float:left">
-    <p>show clust</p><br>
-    <a href="http://bit.ly/clust-blitz">bit.ly/clust-blitz</a>
-  </div>
-
-  <div style="float:right; padding-right:3em;">
-    <p>clust
-  </div>
-</section> -->
-
-
-<!-- <section style="padding-top:5em; padding-left:3em;">
-  <p>In addition to the mouse,
-    <br>you can scroll with the keyboard:
-    <br>use the <b>arrow keys</b>,
-    <br>the <b>space bar</b>,
-    <br>or <b>page up</b> and <b>page down</b>.
-  <p class="grey">Multiple key presses will skip multiple slides.
-</section> -->
-
 
 <script src="d3.v3.min.js"></script>
 <script src="stack.v1.min.js"></script>

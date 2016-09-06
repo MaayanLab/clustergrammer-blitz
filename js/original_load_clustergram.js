@@ -13,7 +13,7 @@ function make_clust(inst_network){
       var args = {
         root: '#container-id-1',
         'network_data': network_data,
-        'about':'Zoom, scroll, and click buttons to interact with the clustergram.',
+        // 'about':'Zoom, scroll, and click buttons to interact with the clustergram.',
         // 'row_tip_callback':gene_info
       };
 
@@ -32,6 +32,8 @@ function make_clust(inst_network){
       // //////////////////////
       // enr_obj = Enrichr_request(cgm);
       // enr_obj.enrichr_icon();
+
+      d3.select(cgm.params.root+' .icons_section').remove();
 
   });
 

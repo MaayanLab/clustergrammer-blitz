@@ -10,7 +10,7 @@ section {
 
 p {
   font-size: 125%;
-  line-height: 140%;
+  line-height: 120%;
   margin-top: 0.0em;
   /*margin-bottom: 0.25em;*/
 }
@@ -79,6 +79,14 @@ a:hover {
 .image_ref{
   text-align: right;
   color: #A3A3A3;
-  font-size: 75%;
+  font-size: 60%;
   /*display: inline-block;*/
+}
+
+.iframe_clust{
+  width:90%;
+  height:17em;
+  margin-top: -0.5em;
+  border:none;
+  margin-left:5%;
 }

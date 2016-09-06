@@ -84,9 +84,13 @@ a:hover {
 }
 
 .iframe_clust{
-  width:90%;
+  width:80%;
   height:17em;
   margin-top: -0.5em;
   border:none;
-  margin-left:5%;
+  margin-left:10%;
+}
+
+.bullet_points{
+  margin-top: -1em;
 }

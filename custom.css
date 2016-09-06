@@ -98,3 +98,7 @@ a:hover {
 .bullet_points{
   margin-top: -1em;
 }
+
+.highlight{
+  color: orange;
+}

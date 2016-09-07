@@ -3,9 +3,13 @@
 Example files
 */
 var file_name = getParameterByName('file');
-make_clust(file_name);
+var wait_time = getParameterByName('wait_time');
+
+setTimeout(make_clust, wait_time, file_name);
 
 function make_clust(inst_network){
+
+  console.log('making clust')
 
     d3.json('json/'+inst_network, function(network_data){
 

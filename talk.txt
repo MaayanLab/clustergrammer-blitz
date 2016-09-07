@@ -1,18 +1,16 @@
 1. Title
-  Hi, I'm Nicolas athe levels of nd I'll be discussing my project, Clustergrammer, a web-based visualization and analysis tool for high-dimensional biological data.
+  Hi, I'm Nicolas and I'll be discussing my project, Clustergrammer, a web-based visualization and analysis tool for high-dimensional biological data.
 
-  This presentation can be found at this link - bitly/clust-blitz and I'll leave this link up for a few slides.
+  This presentation can be found at this bitly link - bitly/clust-blitz if you are interested in following along. I'll leave this link up for a few slides.
 
 2. Biology is Overflowing with Data
-  Biology is overflowing with data. It is possible to measure the expression of tens of thousands of genes, the levels of thousands of proteins, and dozens of parameters in hundreds of thousands of single cells using high-throughput experiments.
+  Biology is overflowing with data. Using high-throughput techniques, it is possible to measure the expression of tens of thousands of genes, the levels of thousands of proteins, and dozens of parameters in hundreds of thousands of single cells.
 
 3. Biological Data is Difficult to Visualize
-  However, becuse biological data can be very high dimensional it can be difficult to visualize and this can lead to hairballs.
-
-  Many of us are familiar with the hairball networks that can form from protein-protein interaction networks for instance or from gene-expresison correlation networks.
+  However, becuse biological data can be very high dimensional it can be very difficult to visualize. This can lead to hairballs, which are incomprehensible representations of complicated biological networks.
 
 4. Heatmap/Clustergram Visualizations (Part 1)
-  Heatmaps are a popular visualization technique that enable direct visualization of high-dimensional data withoug the loss of interpretability associated with dimensionality reduction methods.
+  Heatmaps are a popular visualization technique that enable direct visualization of high-dimensional data. Unlike dimensionality reduction methods, there is no loss of interpretability with a heatmap.
 
   In a heatmap data-points are shown as columns and dimensions are shown as rows. In this example, the data-points are patients and the dimensions are genes.
 

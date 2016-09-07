@@ -6,92 +6,6 @@
 <link rel="stylesheet" href="custom.css">
 
 
-<!-- 10. Acknowledgments -->
-<section class='main_section'>
-
-    <p class='section_title'>
-      Acknowledgments
-    </p>
-
-    <div class="wrap">
-      <div class="fleft acknowledge" style='width:40%'>
-          <a href="">Avi Ma'ayan</a><br>
-          Greg Gundersen<br>
-          Michael McDermott<br>
-          Matthew Jones<br>
-          Andrew Rouillard<br>
-          Qiaonan Duan<br>
-          Zichen Wang<br>
-          Alexender Lachmann<br>
-          Maxim Kuleshov<br>
-          Neil Clark<br>
-          Caroline Monteiro<br>
-          Simon Koplev <br>
-          Anders Dohlman<br>
-          Troy Goff<br>
-          Edward He<br>
-          <br>
-
-      </div>
-
-      <div class="fright acknowledge" style='width:60%'>
-
-          <img src="img/bd2k_idg_logos_vert.png" alt="sky" style="width:30%; float:right">
-
-          <a href="">Cell Signaling Technology Inc</a><br>
-          Klarissa Rikiova<br>
-          Peter V. Hornbeck<br>
-
-          <div class='associations'>
-            <a href="">BD2K-LINCS Data Coordination and Integration Center</a>
-            <br>
-            <br>
-            <a href="">Illuminating the Druggable Genome</a>
-          </div>
-
-          <div class='acknowledge_links'>
-            links<br>
-            <a href="http://bit.ly/clust-blitz">bit.ly/clust-blitz</a><br>
-            <a href="http://amp.pharm.mssm.edu/clustergrammer/" style='word-wrap:break-word;' target="_blank">http://amp.pharm.mssm.edu/clustergrammer/</a><br>
-            <a href="https://github.com/MaayanLab/clustergrammer-blitz" >github-slides</a><br>
-            <a href="https://github.com/MaayanLab/clustergrammer" >github-clustergrammer</a>
-          </div>
-
-      </div>
-    </div>
-
-</section>
-
-<!-- 8. MNIST Example (part 2) -->
-<section class='main_section'>
-
-    <p class='section_title'>
-      Lung Cancer Phosphorylation
-    </p>
-
-    <div class="wrap">
-      <div class="fleft" style='width:30%'>
-        <p>
-          Digits are columns and pixels are rows
-          <br>
-          <br>
-          Similar digits cluster together
-          <br>
-          <br>
-          <br>
-          <br>
-          <div>
-          </div>
-        </p>
-      </div>
-
-      <div class="fright" style='width:70%'>
-       <iframe src="example_clust.html?file=cst_cell_lines_phos.json" class='iframe_clust'></iframe>
-      </div>
-    </div>
-
-</section>
-
 <!-- 1. Title -->
 <section style="text-align:center;padding-top:1.0em;">
   <p class='main_title'><b><a href="http://amp.pharm.mssm.edu/clustergrammer/" target="_blank">Clustergrammer</a>:</b> Web-Based Heatmap Visualization and Analysis Tool for <br> High-Dimensional Biological Data
@@ -255,7 +169,7 @@
           Zoom, reorder, filter, etc.
           <br>
           <br>
-          <a href="http://amp.pharm.mssm.edu/clustergrammer/" target="_blank">web app</a>
+          link: <a href="http://amp.pharm.mssm.edu/clustergrammer/" target="_blank">web app</a>
           <div>
           </div>
         </p>
@@ -268,20 +182,48 @@
 
 </section>
 
-<!-- 7. CCLE Example -->
+
+<!-- 7. CST Phosphoryaltion -->
 <section class='main_section'>
 
     <p class='section_title'>
-      Cancer Cell Line Encyclopedia Example
+      Lung Cancer Post-translational Modification Signaling
     </p>
 
     <div class="wrap">
-      <div class="fleft" style='width:30%'>
+      <div class="fleft" style='width:30%; font-size: 90%;'>
         <p>
-          Gene expression data from the Cancer Cell Line Encyclopedia
+          Collaborators at Cell Signaling Technology measured phosphorylation levels in 42 lung cancer cell lines
           <br>
           <br>
-          Cell lines are columns and genes are rows
+          We are using Clustergrammer to analyze their data
+          <br>
+          <br>
+        </p>
+      </div>
+
+      <div class="fright" style='width:70%'>
+       <iframe src="example_clust.html?file=cst_cell_lines_phos.json" class='iframe_clust'></iframe>
+      </div>
+    </div>
+
+</section>
+
+
+<!-- 8. CST Gene expression -->
+<section class='main_section'>
+
+    <p class='section_title'>
+      Lung Cancer Gene Expression
+    </p>
+
+    <div class="wrap">
+      <div class="fleft" style='width:30%; font-size: 90%;'>
+        <p>
+          Gene expression data was also obtained from the Cancer Cell Line Encyclopedia
+          <br>
+          <br>
+          Cell lines cluster similarly based on phosphorylation and expression
           <br>
           <br>
           <div>
@@ -296,80 +238,66 @@
 
 </section>
 
-<!-- 8. MNIST Example (part 1) -->
-<!-- <section class='main_section'>
+
+<!-- 10. Acknowledgments -->
+<section class='main_section'>
 
     <p class='section_title'>
-      MNIST Handwritten Digits
+      Acknowledgments
     </p>
 
     <div class="wrap">
-      <div class="fleft" style='width:30%'>
-        <p>
-          Contains 1000s of labeled handwritten images
+      <div class="fleft acknowledge" style='width:40%'>
+          <a href="">Avi Ma'ayan</a><br>
+          Greg Gundersen<br>
+          Michael McDermott<br>
+          Matthew Jones<br>
+          Andrew Rouillard<br>
+          Qiaonan Duan<br>
+          Zichen Wang<br>
+          Alexender Lachmann<br>
+          Maxim Kuleshov<br>
+          Neil Clark<br>
+          Caroline Monteiro<br>
+          Simon Koplev <br>
+          Anders Dohlman<br>
+          Troy Goff<br>
+          Edward He<br>
           <br>
-          <br>
-          Each digit lives in 784 dimensions
-          <br>
-          <br>
-          <br>
-          <div>
-          </div>
-        </p>
+
       </div>
 
-      <div class="fright" style='width:70%'>
-        <img src="img/mnist_example.png" alt="sky" style="width:95%; float:right">
-        <div class='image_ref'>
-          <a href="http://pavel.surmenok.com/2014/07/06/neural-networks-training-using-encog/" target='_blank'>http://pavel.surmenok.com/2014/07/06/neural-networks-training-using-encog/</a>
-        </div>
+      <div class="fright acknowledge" style='width:60%'>
+
+          <img src="img/bd2k_idg_logos_vert.png" alt="sky" style="width:30%; float:right">
+
+          <a href="">Cell Signaling Technology Inc</a><br>
+          Klarissa Rikiova<br>
+          Peter V. Hornbeck<br>
+
+          <div class='associations'>
+            <a href="">BD2K-LINCS Data Coordination and Integration Center</a>
+            <br>
+            <br>
+            <a href="">Illuminating the Druggable Genome</a>
+          </div>
+
+          <div class='acknowledge_links'>
+            links<br>
+            <a href="http://bit.ly/clust-blitz">bit.ly/clust-blitz</a><br>
+            <a href="http://amp.pharm.mssm.edu/clustergrammer/" style='word-wrap:break-word;' target="_blank">http://amp.pharm.mssm.edu/clustergrammer/</a><br>
+            <a href="https://github.com/MaayanLab/clustergrammer-blitz" >github-slides</a><br>
+            <a href="https://github.com/MaayanLab/clustergrammer" >github-clustergrammer</a>
+          </div>
+
       </div>
     </div>
 
-</section> -->
+</section>
 
 
-
-<!-- 9. MNIST Example (part 3) -->
-<!-- <section class='main_section'>
-
-    <p class='section_title'>
-      MNIST Example
-    </p>
-
-    <div class="wrap">
-      <div class="fleft" style='width:30%'>
-        <p>
-          The digit similarity matrix gives another view of the data
-          <br>
-          <br>
-          <br>
-          <br>
-          <br>
-          <br>
-          <div>
-          </div>
-        </p>
-      </div>
-
-      <div class="fright" style='width:70%'>
-       <iframe src="example_clust.html?file=mnist_col.json" class='iframe_clust'></iframe>
-      </div>
-    </div>
-
-</section> -->
-
-
-
-
-
-
-
-<!-- <script src="d3.v3.min.js"></script> -->
 <script src="lib/js/d3.js"></script>
 <script src="stack.v1.min.js"></script>
 <script>
   var mystack = stack();
 </script>
-
-

@@ -17,7 +17,12 @@
 5. Heatmap/Clustergram Visualizations (Part 2)
   However, static images are limited in the amount of information they can readily visualize and sharing interactive clustergrams is difficult.
 
-6. Clustergrammer Web App
+  The person you are sharing with needs to have the same software you are using and know how to use it.
+
+6.1 Clustergrammer Web App
+  To address these problems we created Clustergrammer, a web app for creating and sharing interactive visualizations.
+
+6.2 Clustergrammer Web App
   Clustergrammer is a web app that allows users to upload a matrix and instantly generate an interactive and shareable clustergram.
 
   The visualizations produced by clustergrammer are highly interactive and allow: zooming, reordering, filtering, etc.

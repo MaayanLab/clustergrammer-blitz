@@ -2,23 +2,23 @@ blitz practice talk notes 9-7-2016
 -----------------------------------
 
 Title slide
-  remove links on title slide and reorganize
+  * remove links on title slide and reorganize
 
-  Put the clustergrammer logo on the title
+  * Put the clustergrammer logo on the title
 
 Background
-  Might be spending too much time in the introduction
+  * Might be spending too much time in the introduction
 
 Clustergrammer intro slide
-  Have a slide that states something like, our proposed solution to these problems was to develop the clustergrammer application
+  * Have a slide that states something like, our proposed solution to these problems was to develop the clustergrammer application
 
-  Mention what is being shown in the rows and columns of the clustergram
+  * Mention what is being shown in the rows and columns of the clustergram
 
 Conclusion slide (before acknowledgments)
   Add some kind of summary slide that discusses what the project will help with (gene expression data, etc), what it can be used for etc.
 
   Mention that it has a very user friendly interface
 
-  Mention that it is open source and free
+  * Mention that it is open source and free
 
-  IPython/Jupyter notebook
+  * IPython/Jupyter notebook

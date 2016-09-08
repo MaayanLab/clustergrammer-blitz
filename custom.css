@@ -58,7 +58,7 @@ a:hover {
 .main_title{
   font-size: 145%;
   line-height: 110%;
-  margin-top: 1em;
+  margin-top: 0.25em;
 }
 
 
@@ -118,4 +118,14 @@ a:hover {
 
 .associations{
   margin-top: 1em;
+}
+
+.custom_list{
+  font-size:125%;
+  margin-top:-0.5em;
+  margin-left: 0.5em;
+}
+
+.custom_list li{
+  margin-bottom: 0.5em;
 }

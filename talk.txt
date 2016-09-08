@@ -35,7 +35,12 @@
 8. Lung Cancer Gene Expression
   Gene expression data for these cell lines was also obtained from the Cancer Cell Line Encyclopedia. From this data we can see that cell lines also cluster accodring to their histology and we can identify clusters of differentially regulated genes.
 
-9. Acknowledgments and links
+9. Conclusions
+  Clustergrammer is a general purpose visualization tool that can be used on a wide variety of biological data.
+
+  Clustergrammer has also been incorporated into several Ma'ayan lab tools such as: Enrichr, Gen3Va, Harmonizome, and L1000CDS2
+
+10. Acknowledgments and links
   I would like to acknowledge the Ma'ayan lab, Cell Signaling Technology.
 
 

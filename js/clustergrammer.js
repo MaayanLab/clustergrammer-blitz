@@ -1112,6 +1112,7 @@ var Clustergrammer =
 
 	var utils = __webpack_require__(2);
 	var colors = __webpack_require__(20);
+	var check_if_value_cats = __webpack_require__(191);
 
 	module.exports = function process_category_info(params, viz) {
 	  var preserve_cats = arguments.length <= 2 || arguments[2] === undefined ? true : arguments[2];
@@ -1119,14 +1120,23 @@ var Clustergrammer =
 
 	  var super_string = ': ';
 	  var tmp_super;
+	  var all_are_values;
+	  var inst_color;
 
 	  viz.show_categories = {};
 	  viz.all_cats = {};
 	  viz.cat_names = {};
 
+	  // this will hold the information for calculating the opacity of the value
+	  // function
+	  var ini_val_opacity = {};
+	  ini_val_opacity.row = null;
+	  ini_val_opacity.col = null;
+
 	  var predefine_colors = false;
 	  if (viz.cat_colors === null) {
 	    viz.cat_colors = {};
+	    viz.cat_colors.value_opacity = ini_val_opacity;
 	    predefine_colors = false;
 	  } else {
 	    predefine_colors = true;
@@ -1173,13 +1183,25 @@ var Clustergrammer =
 
 	        var names_of_cat = _.uniq(utils.pluck(params.network_data[inst_rc + '_nodes'], inst_cat)).sort();
 
+	        // check whether all the categories are of value type
+	        all_are_values = check_if_value_cats(names_of_cat);
+
+	        // tmp disable value categories
+	        ///////////////////////////////////
+	        ///////////////////////////////////
+	        all_are_values = false;
+
 	        if (predefine_colors === false) {
 
 	          viz.cat_colors[inst_rc][inst_cat] = {};
 
 	          _.each(names_of_cat, function (cat_tmp, i) {
 
-	            var inst_color = colors.get_random_color(i + num_colors);
+	            inst_color = colors.get_random_color(i + num_colors);
+
+	            if (all_are_values) {
+	              inst_color = '#000000';
+	            }
 
 	            viz.cat_colors[inst_rc][inst_cat][cat_tmp] = inst_color;
 
@@ -1201,6 +1223,9 @@ var Clustergrammer =
 	  });
 
 	  viz.cat_colors = viz.cat_colors;
+
+	  viz.cat_colors.opacity = 0.6;
+	  viz.cat_colors.active_opacity = 0.9;
 
 	  return viz;
 	};
@@ -1257,9 +1282,6 @@ var Clustergrammer =
 	  viz.cat_room = {};
 	  viz.cat_room.symbol_width = 12;
 	  viz.cat_room.separation = 3;
-
-	  viz.cat_colors.opacity = 0.6;
-	  viz.cat_colors.active_opacity = 0.9;
 
 	  _.each(['row', 'col'], function (inst_rc) {
 
@@ -3551,17 +3573,19 @@ var Clustergrammer =
 	    }).attr('opacity', 0.4);
 	  }
 
-	  // add row callback function
-	  d3.selectAll(params.root + ' .row_label_group').on('click', function (d) {
-	    if (typeof params.click_label == 'function') {
-	      params.click_label(d.name, 'row');
-	      add_row_click_hlight(params, this, d.ini);
-	    } else {
-	      if (params.tile_click_hlight) {
-	        add_row_click_hlight(params, this, d.ini);
-	      }
-	    }
-	  });
+	  // // add row callback function
+	  // d3.selectAll(params.root+' .row_label_group')
+	  //   .on('click',function(d){
+	  //     if (typeof params.click_label == 'function'){
+	  //       params.click_label(d.name, 'row');
+	  //       add_row_click_hlight(params, this, d.ini);
+	  //     } else {
+	  //       if (params.tile_click_hlight){
+	  //         add_row_click_hlight(params, this, d.ini);
+	  //       }
+	  //     }
+
+	  //   });
 		};
 
 /***/ },
@@ -4441,7 +4465,7 @@ var Clustergrammer =
 
 	module.exports = function make_tooltips(params) {
 
-	  d3.selectAll(params.root + ' .row_tip').remove();
+	  d3.selectAll('.row_tip').remove();
 
 	  if (params.labels.show_label_tooltips) {
 
@@ -6593,13 +6617,12 @@ var Clustergrammer =
 	      }
 
 	      cat_rect.attr('width', params.viz.x_scale.rangeBand()).attr('height', params.viz.cat_room.symbol_width).style('fill', function (d) {
-	        return params.viz.cat_colors.col[inst_cat][d[inst_cat]];
+	        var cat_name = d[inst_cat];
+	        var inst_color = params.viz.cat_colors.col[inst_cat][cat_name];
+	        return inst_color;
 	      }).style('opacity', params.viz.cat_colors.opacity).on('mouseover', cat_tip.show).on('mouseout', function () {
-
 	        cat_tip.hide(this);
-
 	        reset_cat_opacity(params);
-
 	        d3.select(this).classed('hovering', false);
 	      });
 	    });
@@ -6788,7 +6811,8 @@ var Clustergrammer =
 	        }
 
 	        cat_rect.attr('width', params.viz.cat_room.symbol_width).attr('height', params.viz.y_scale.rangeBand()).style('fill', function (d) {
-	          var inst_color = params.viz.cat_colors.row[inst_cat][d[inst_cat]];
+	          var cat_name = d[inst_cat];
+	          var inst_color = params.viz.cat_colors.row[inst_cat][cat_name];
 	          return inst_color;
 	        }).attr('x', function () {
 	          var inst_offset = params.viz.cat_room.symbol_width + params.viz.uni_margin / 2;
@@ -7463,11 +7487,6 @@ var Clustergrammer =
 	  tmp_config.ini_expand = false;
 	  tmp_config.ini_view = null;
 	  tmp_config.current_col_cat = cgm.params.current_col_cat;
-
-	  // // pass on category info to new config
-	  // console.log('passing on category info from previous viz')
-	  // tmp_config.all_cats = cgm.params.viz.all_cats;
-	  // tmp_config.cat_colors.row['cat-1'] = tmp_config.cat_colors.row['cat-0']
 
 	  // always preserve category colors when updating
 	  tmp_config.cat_colors = cgm.params.viz.cat_colors;
@@ -11967,6 +11986,52 @@ var Clustergrammer =
 	  // $( params.root+' .opacity_slider' ).slider({
 	  //   value:1.0
 	  // });
+		};
+
+/***/ },
+/* 191 */
+/***/ function(module, exports) {
+
+	'use strict';
+
+	module.exports = function check_if_value_cats(names_of_cat) {
+
+	  var super_string = ': ';
+
+	  var tmp_cat = names_of_cat[0];
+
+	  var has_title = false;
+	  var might_have_values = false;
+	  var all_are_values = false;
+
+	  if (tmp_cat.indexOf(super_string) > -1) {
+	    has_title = true;
+	    tmp_cat = tmp_cat.split(super_string)[1];
+	  }
+
+	  if (isNaN(tmp_cat) == false) {
+	    might_have_values = true;
+	  }
+
+	  // check each value for number
+	  if (might_have_values) {
+
+	    // the default state is that all are now values, check each one
+	    all_are_values = true;
+
+	    _.each(names_of_cat, function (inst_cat) {
+
+	      if (has_title) {
+	        inst_cat = inst_cat.split(super_string)[1];
+	      }
+
+	      if (isNaN(inst_cat) == true) {
+	        all_are_values = false;
+	      }
+	    });
+	  }
+
+	  return all_are_values;
 		};
 
 /***/ }
